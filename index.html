@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html ng-app="ControlRoom">
-	<head>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script> -->
-		<script type="text/javascript" src="scripts/angular-1.2.27/angular.min.js"></script>
-		<script type="text/javascript" src="scripts/controllers.js"></script>
-		
-		<link href="css/menus.css" rel="stylesheet" type="text/css" />
-		<script src="scripts/menus.js" type="text/javascript"></script>
-	</head>
-	
-	<body ng-controller="MainWindow">
-		<div>
-  			<div style="background:url(images/HeaderBar.png) repeat-x; height: 120px">
-			<div style="position:absolute; top: 10px; left: 70px;"><img src="images/App4SoftwareLogo.png" alt="App4Software Logo"></div>
-			<div style="position:absolute; left:300px;"><h1>School Control Room</h1></div>
-		</div>
-	
-		<div style="position:absolute; top:120px">
-			<ul id="menu-v">
-				<li><a href="#" ng-click="setPage('home')">Home</a></li>
-				<li><a href="#" ng-click="setPage('messages')">Messages</a></li>
-				<li><a href="#">Reports</a>
-					<ul class="sub">
-						<li><a href="#">School Wide</a>
-							<ul class="sub">
-								<li><a href="#">Report 1</a></li>
-								<li><a href="#">Report 2</a></li>
-								<li><a href="#">Report 3</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Student</a>
-							<ul class="sub">
-								<li><a href="#">Report 4</a></li>
-								<li><a href="#">Report 5</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Teacher</a>
-							<ul class="sub">
-								<li><a href="#">Report 6</a></li>
-								<li><a href="#">Report 7</a></li>
-								<li><a href="#">Report 8</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a href="#">Load Data</a></li>
-				<li><a href="#">Pages</a>
-					<ul class="sub">
-						<li><a href="#">Info</a></li>
-						<li><a href="#">Help</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Passwords</a></li>
-				<li><a href="#">Agreements</a></li>
-				<li><a href="#">Settings</a></li>
-			</ul>
-		</div>
-	
-		<div style="position:absolute; top:120px; left:200px;">
-			Body: {{thePage}}
-			<!-- https://docs.angularjs.org/guide/directive#text-and-attribute-bindings
-				This is not working as I would expect.  Some comments indicate is should not work at all but other examples show it working
-				All we want to do is pass the {{thePage}} as the newpage so this is then just one line rather than one for each menu item 
 
-            <thedata ng-attr-newpage="{{thePage}}"></thedata>  -->
-			<thedata ng-show="isPageCurrent('home')" ng-attr-newpage="home"></thedata>
-			<thedata ng-show="isPageCurrent('messages')" ng-attr-newpage="messages"></thedata>
-		</div>
-    </body>
+<head>
+    <link href="css/menus.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div style="background:url(images/HeaderBar.png) repeat-x; height: 120px">
+        <div style="position:absolute; top: 10px; left: 70px;">
+            <img src="images/App4SoftwareLogo.png" alt="App4Software Logo">
+        </div>
+        <div style="position:absolute; left:300px;">
+            <h1>School Control Room</h1>
+        </div>
+    </div>
+
+    <div style="position:absolute; top:120px">
+        <ul id="menu-v">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/Messages">Messages</a></li>
+            <li><a href="#">Reports</a>
+                <ul class="sub">
+                    <li><a href="#">School Wide</a>
+                        <ul class="sub">
+                            <li><a href="#">Report 1</a></li>
+                            <li><a href="#">Report 2</a></li>
+                            <li><a href="#">Report 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Student</a>
+                        <ul class="sub">
+                            <li><a href="#">Report 4</a></li>
+                            <li><a href="#">Report 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Teacher</a>
+                        <ul class="sub">
+                            <li><a href="#">Report 6</a></li>
+                            <li><a href="#">Report 7</a></li>
+                            <li><a href="#">Report 8</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Load Data</a></li>
+            <li><a href="#">Pages</a>
+                <ul class="sub">
+                    <li><a href="#">Info</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Passwords</a></li>
+            <li><a href="#">Agreements</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <div style="position:absolute; top:120px; left:200px;">
+        <section>
+            <div class="" ng-view></div>
+        </section>
+    </div>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script> -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <script src="lib/angular-touch.min.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/menus.js"></script>
+</body>
+
 </html>
-	
