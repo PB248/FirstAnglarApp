@@ -61,7 +61,9 @@
 			Body: {{thePage}}
 			<!-- https://docs.angularjs.org/guide/directive#text-and-attribute-bindings
 				This is not working as I would expect.  Some comments indicate is should not work at all but other examples show it working
-				All we want to do is pass the {{thePage}} as the newpage so this is then just one line rather than one for each menu item -->
+				All we want to do is pass the {{thePage}} as the newpage so this is then just one line rather than one for each menu item 
+
+            <thedata ng-attr-newpage="{{thePage}}"></thedata>  -->
 			<thedata ng-show="isPageCurrent('home')" ng-attr-newpage="home"></thedata>
 			<thedata ng-show="isPageCurrent('messages')" ng-attr-newpage="messages"></thedata>
 		</div>
