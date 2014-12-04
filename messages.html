@@ -1,1 +1,14 @@
-<div>This is a messages tab</div>
+<div ng-controller='MyCtrlMessages'>
+  <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
+    
+<!--    Messages: {{messageList}}-->
+    <table>
+        <tr ng-repeat="message in messageList">
+            <td>{{message.groupid}}</td>
+            <td>{{message.title}}</td>
+            <td>{{message.body}}</td>
+            <td>{{message.createdOn}}</td>
+            <td>{{message.read}}</td>
+        </tr>
+    </table>
+</div>

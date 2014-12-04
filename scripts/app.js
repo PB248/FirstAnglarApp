@@ -3,7 +3,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('ControlRoom', [
   'ngRoute',
-  'ControlRoom.controllers'
+  'ControlRoom.controllers',
+  'ControlRoom.services'
 ])
 
 .config(['$routeProvider',
@@ -19,4 +20,5 @@ angular.module('ControlRoom', [
         $routeProvider.otherwise({
             redirectTo: '/home'
         });
-}]);
+    }
+]);
