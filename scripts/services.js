@@ -1,17 +1,15 @@
 angular.module('ControlRoom.services', [])
   
-//.factory('dataFactory', ['$scope', '$http', '$templateCache',
-//    function ($scope, $http, $templateCache) {
-.factory('dataFactory', ['$scope',
-    function ($scope) {
+.factory('dataFactory',
+    function ($http) {
         var dataFactory = {};
 
-        $scope.method = 'GET';
-        $scope.url = '/ctrlRoom.php?method=message';
+//        var method = 'GET';
+//        var url = '/ctrlRoom.php?method=';
 
         dataFactory.getMessages =  function() {
-            $http({method: $scope.method, url: $scope.url, cache: $templateCache})
+            return $http({method: 'GET', url: '/ctrlRoom.php?method=message'})
         };
 
     return dataFactory;
-  }]);
+  });
