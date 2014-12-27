@@ -2,7 +2,23 @@
 <html ng-app="ControlRoom">
 
 <head>
-    <link href="css/menus.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/menus.css" type="text/css" />
+    <link rel="stylesheet" href="css/ControlRoom.css" type="text/css" />
+    
+    <style type="text/css" media="screen">
+        /* Generic pane rules */
+        body { margin: 0 }
+        .row, .col { overflow: hidden; position: absolute; }
+        .row { left: 0; right: 0; }
+        .col { top: 0; bottom: 0; }
+        .scroll-x { overflow-x: auto; }
+        .scroll-y { overflow-y: auto; }
+
+        .header.row { height: 75px; top: 0; }
+        .body.row { top: 0px; bottom: 250px; }
+        .footer.row { height: 250px; bottom: 0; }
+    </style>
 </head>
 
 <body>
@@ -57,9 +73,9 @@
         </ul>
     </div>
 
-    <div style="position:absolute; top:120px; left:200px;">
+    <div style="position:absolute; top:120px; left:200px; height: 100%;">
         <section>
-            <div class="" ng-view></div>
+            <div class="position:relative" ng-view></div>
         </section>
     </div>
     

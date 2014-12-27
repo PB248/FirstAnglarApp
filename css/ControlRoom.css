@@ -1,0 +1,7 @@
+.myTable tr:nth-child(even) { /*(even) or (2n 0)*/ 
+    background: #A4D1FF;
+}
+
+.myTable tr:nth-child(odd) { /*(odd) or (2n 1)*/
+    background: #EAF4FF;
+}
